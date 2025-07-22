@@ -13,6 +13,7 @@ jobs:
         runs-on: "windows-latest"
         steps:
           - name: "Show OS"
+            shell: "bash"
             run: |
                   echo "Windows runner:$RUNNER_OS"
     macos-echo:
