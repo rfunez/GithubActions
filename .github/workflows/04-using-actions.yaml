@@ -14,7 +14,7 @@ jobs:
                    ls -latr
                    pwd
 
-            - name: "Set up Node"
+            - name: "Set up Node action"
               uses: "actions/setup-node@v4"
               with:
                 node-version: '20.x'
