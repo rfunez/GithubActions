@@ -12,7 +12,6 @@ jobs:
             - name: "Printing folder"
               run: |
                    ls -latr
-                   cd ./04-using-actions/react-app
                    pwd
 
             - name: "Set up Node"
@@ -22,6 +21,7 @@ jobs:
 
             - name: "Install dependencies"
               run: |
+                   cd ./04-using-actions/react-app
                    pwd
                    npm ci
             
