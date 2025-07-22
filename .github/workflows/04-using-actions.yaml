@@ -25,6 +25,10 @@ jobs:
                    pwd
                    npm ci
             
+            - name: "Test app"
+              run: |
+                   pwd
+            
             
                 
               
