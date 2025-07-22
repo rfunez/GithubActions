@@ -11,9 +11,9 @@ jobs:
 
             - name: "Printing folder"
               run: |
-                   pwd
                    ls -latr
                    cd ./04-using-actions
+                   pwd
 
             - name: "Set up Node"
               uses: "actions/setup-node@v4"
