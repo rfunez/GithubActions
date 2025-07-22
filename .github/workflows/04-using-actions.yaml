@@ -27,7 +27,8 @@ jobs:
             
             - name: "Test app"
               run: |
-                   pwd
+                   cd ./04-using-actions/react-app
+                   npm run test
             
             
                 
