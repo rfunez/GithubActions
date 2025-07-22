@@ -1,7 +1,7 @@
 name: "02 - Workflow Events"
 on: 
     schedule:
-      - cron: 45 09 * * *
+      - cron: 48 10 * * *
     push:
     pull_request:
     workflow_dispatch:
