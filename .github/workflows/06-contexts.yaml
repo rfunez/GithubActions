@@ -1,8 +1,8 @@
 name: "06 - Contexts"
+run-name: "Running wf ${{github.workflow}} by ${{github.actor}}"
 on:
     push: 
     workflow_dispatch: 
-run-name: "Run by ${{github.actor}} in $RUNNER_OS"
 
 jobs:
   echo-data:
@@ -19,5 +19,7 @@ jobs:
              echo "Event name ${{github.run_number}}"
       
       - name: "Print repository variable" 
-        run: echo "Repository var is ${{vars.MY_VAR}}"
+        run: |
+              echo "Repository var is ${{vars.MY_VAR}}"
+              echo "Runner os : ${{runner.os}}"
         
