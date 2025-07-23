@@ -20,8 +20,8 @@ jobs:
              echo "Runner OS: ${{runner.os}}"
       
       - name: "[debug] Print when triggered from main"
-        if: ${{inputs.debug == true}} && ${{github.ref == 'main'}}
-        run: echo "I was triggered from ${{github.ref}}"
+        if: ${{inputs.debug == true}} && ${{github.ref_name == 'main'}}
+        run: echo "I was triggered from ${{github.ref_name}}"
 
       - name: "Greeting"
         env:
