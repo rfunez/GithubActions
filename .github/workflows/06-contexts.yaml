@@ -1,0 +1,23 @@
+name: "06 - Contexts"
+on:
+    push: 
+    workflow_dispatch: 
+
+jobs:
+  echo-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Display Information"
+        run: |
+             echo "Event name {{github.event_name}}" 
+             echo "Event name {{github.ref_name}}"
+             echo "Event name {{github.sha}}"
+             echo "Event name {{github.actor}}"
+             echo "Event name {{github.workflow}}"
+             echo "Event name {{github.ref_name}}"
+             echo "Event name {{github.run_id}}"
+             echo "Event name {{github.run_number}}"
+      
+      - name: "Print repository variable" 
+        run: echo "Repository var is {{env.MY_VAR}}"
+        
