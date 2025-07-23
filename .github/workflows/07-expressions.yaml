@@ -6,7 +6,7 @@ on:
             debug:
                 description: "Debug input run manually"
                 type: boolean
-                default: false
+                default: true
 jobs:
   echo:
     runs-on: ubuntu-latest
