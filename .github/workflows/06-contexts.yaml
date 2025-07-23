@@ -2,7 +2,7 @@ name: "06 - Contexts"
 on:
     push: 
     workflow_dispatch: 
-run-name: "Run by S{{github.actor}} in $RUNNER_OS"
+run-name: "Run by ${{github.actor}} in $RUNNER_OS"
 
 jobs:
   echo-data:
