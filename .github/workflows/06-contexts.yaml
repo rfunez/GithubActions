@@ -1,11 +1,22 @@
 name: "06 - Contexts"
 run-name: "Running wf ${{github.workflow}} by ${{github.actor}}"
+env:
+    MY_WORKFLOW_VAR: "workflow"
+    MY_OVERWRITTEN_VAR: "workflow"
 on:
     push: 
     workflow_dispatch: 
+        inputs:
+          debug: 
+            description: "DEbug input"
+            type: boolean
+            default: false
 
 jobs:
   echo-data:
+    env:
+        MY_JOB_VAR: "job"
+        MY_OVERWRITTEN_VAR: "job"
     runs-on: ubuntu-latest
     steps:
       - name: "Display Information"
@@ -22,4 +33,28 @@ jobs:
         run: |
               echo "Repository var is ${{vars.MY_VAR}}"
               echo "Runner os : ${{runner.os}}"
+      
+      - name: "Print workflow variables"
+        run: |
+             echo "Repository variable: ${{vars.MY_VAR}}"
+             echo "Var1 is : ${{env.MY_WORKFLOW_VAR}}"
+             echo "Var1 is : ${{env.MY_OVERWRITTEN_VAR}}"
+      
+      - name: "Print job variables"
+        run: |
+             echo "Job var1 is ${{env.MY_JOB_VAR}}"
+             echo "Job var2 is ${{env.MY_OVERWRITTEN_VAR}}"
+
+      - name: "Print step var"
+        env:
+            MY_STEP_VAR: "step"
+            MY_OVERWRITTEN_VAR: "step"
+        run: |
+             echo "Step var1 is ${{env.MY_STEP_VAR}}"
+             echo "Step var2 is ${{env.MY_OVERWRITTEN_VAR}}"
+
+
+         
+        
+      
         
