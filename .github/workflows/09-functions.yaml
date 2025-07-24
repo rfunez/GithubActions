@@ -6,6 +6,8 @@ jobs:
     echo1:
         runs-on: ubuntu-latest
         steps:
+          - name: "Sleep step"
+            run: sleep 30000
           - name: "Failing step"
             run: exit 1
           - name: "I will be skipped"
