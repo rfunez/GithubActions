@@ -11,8 +11,7 @@ jobs:
                  echo "PR title: ${{github.event.pull_request.title}}"
           - name: "Print PR labels"
             env:
-                pr_label: "${{github.event.pull_request.labels}}"
-                jsonLabel: toJson("${{env.pr_label}}")
+                jsonLabel: toJson("${{github.event.pull_request.labels}}")
             run: | 
                  echo "PR label in json format: ${{env.jsonLabel}}"
           - name: "Bug step"
