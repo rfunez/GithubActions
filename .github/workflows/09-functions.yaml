@@ -12,7 +12,7 @@ jobs:
           - name: "Print PR labels"
             env:
                 pr_labels: "${{github.event.pull_request.labels}}"
-                jsonLabel: "${{toJson('${{env.pr_labels}}')}}"
+                jsonLabel: "${{toJson(env.pr_labels)}}"
             run: | 
                  echo "PR label in json format: ${{env.jsonLabel}}"
           - name: "Bug step"
