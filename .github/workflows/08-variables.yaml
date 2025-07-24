@@ -6,7 +6,7 @@ run-name: "Running environment WF"
 env:
     WORKFLOW_VAR: "I am a workflow env var"
     OVERWRITTEN: "I will be overwritten"
-    UNDEFINED_VAR_WITH_DEFAULT: ${{vars.UNDEFINED_VAR != null && vars.UNDEFINED_VAR || 'default value'}}
+    UNDEFINED_VAR_WITH_DEFAULT: ${{vars.UNDEFINED_VAR != '' && vars.UNDEFINED_VAR || 'default value'}}
 jobs:
   echo:
     runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
 
   echo3:
     runs-on: ubuntu-latest
-    environment: prod    
+    environment: ENV1  
     steps:
       - name: "Print Prod Variables" 
         run: |
@@ -55,7 +55,7 @@ jobs:
     steps:
       - name: "Print Undefined Variables"
         run: |
-             echo "Org var: ${{vars.UNDEFINED_VAR_WITH_DEFAULT}}"
+             echo "Undefined var: ${{vars.UNDEFINED_VAR_WITH_DEFAULT}}"
     
 
 
