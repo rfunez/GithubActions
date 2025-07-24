@@ -11,7 +11,7 @@ jobs:
                  echo "PR title: ${{github.event.pull_request.title}}"
           - name: "Print PR labels"
             env:
-                jsonLabel: toJson("${{github.event.pull_request.labels}}")
+                jsonLabel: "${{toJson('${{github.event.pull_request.labels}}')}}"
             run: | 
                  echo "PR label in json format: ${{env.jsonLabel}}"
           - name: "Bug step"
@@ -20,7 +20,7 @@ jobs:
             if: failure() && contains("${{env.title}}",'fix')
             run: echo "This is a bug"
           - name: "Sleep step"
-            run: sleep 30000
+            run: sleep 20000
           - name: "Failing step"
             run: exit 1
           - name: "I will be skipped"
