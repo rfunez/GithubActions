@@ -1,6 +1,5 @@
 name: "08 - Using Variables"
 on:
-  push:
   workflow_dispatch:
 run-name: "Running environment WF"
 env:
@@ -61,11 +60,11 @@ jobs:
     steps:
       - name: "Check variables v1"
         if: ${{vars.ORG_VAR != ''}}
-        run: echo "Oragnizational var defined"
+        run: echo "Organizational var defined"
       - name: "Check variables v2"
         if: ${{vars.ORG_VAR == ''}}
         run: | 
-             echo "Variable definida: ${{vars.ORG_VAR}}"
+             echo "Variable no definida: ${{vars.ORG_VAR}}"
     
 
 
