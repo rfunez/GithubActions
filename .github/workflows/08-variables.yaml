@@ -55,7 +55,17 @@ jobs:
     steps:
       - name: "Print Undefined Variables"
         run: |
-             echo "Undefined var: ${{vars.UNDEFINED_VAR_WITH_DEFAULT}}"
+             echo "Undefined var: ${{env.UNDEFINED_VAR_WITH_DEFAULT}}"
+  test_vars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Check variables v1"
+        if: ${{vars.ORG_VAR != ''}}
+        run: echo "Oragnizational var defined"
+      - name: "Check variables v2"
+        if: ${{vars.ORG_VAR == ''}}
+        run: | 
+             echo "Variable definida: ${{vars.ORG_VAR}}"
     
 
 
