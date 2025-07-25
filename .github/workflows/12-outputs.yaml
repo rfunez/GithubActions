@@ -40,5 +40,6 @@ jobs:
         if: ${{needs.build.outputs.build-status == 'success'}}
       - name: "Print Outputs"
         run: |
+             cat $GITHUB_OUTPUT
              echo "Output from build job: ${{needs.build.outputs.output1}}"
 
