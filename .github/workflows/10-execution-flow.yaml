@@ -19,7 +19,6 @@ jobs:
             run: echo "Running tests..."
           - name: "Failing tests"
             run: exit 1
-            continue-on-error: true
             if: ${{! inputs.pass-unit-tests}}
     deploy-nonprod:
         runs-on: ubuntu-latest
