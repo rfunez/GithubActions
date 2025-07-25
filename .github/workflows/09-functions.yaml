@@ -25,7 +25,7 @@ jobs:
             if: success()
             run: echo "I will print if previous steps succeed."
           - name: "I will execute if previous failure"
-            if: ${{failure()}}
+            if: failure()
             run: echo "I will print if any previous step fails."
           - name: "I will execute if not cancelled"
             if: (!cancelled())
