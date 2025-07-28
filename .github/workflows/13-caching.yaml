@@ -36,7 +36,7 @@ jobs:
         if: ${{inputs.use-cache}}
       - name: "Install node dependencies"
         run: npm ci
-        if: ${{steps.cache.outputs.cache.cache-hit != 'true'}}
+        if: ${{steps.cache.outputs.cache-hit != 'true'}}
       - name: "Install npm"
         run: npm install
       - name: "Run tests"
