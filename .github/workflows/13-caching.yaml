@@ -35,12 +35,14 @@ jobs:
           path: "13-caching/react-app/node_modules"
         if: ${{inputs.use-cache}}
       - name: "Install node dependencies"
-        run: |
-              pwd
-              npm ci
+        run: npm ci
         if: ${{steps.cache.outputs.cache.cache-hit == 'true'}}
+      - name: "Install npm"
+        run: npm install
       - name: "Run tests"
-        run: npm run test
+        run: |
+              pwd  
+              npm run test
       - name: "Building"
         run: npm run build
       - name: "Deploy to non prod"
