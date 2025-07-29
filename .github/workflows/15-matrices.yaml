@@ -55,6 +55,8 @@ jobs:
                 opacity: 75
               - shape: circled
                 opacity: 100
+              - color: red
+                shape: triangle
               - opacity: 50
 
         steps:
