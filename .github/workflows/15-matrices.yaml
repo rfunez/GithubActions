@@ -22,6 +22,6 @@ jobs:
                 node-version: "${{matrix.node-version}}"
           - name: "Perform some tests"
             run: |
-                 echo "Running tests on OS $RUNNER_OS and NodeJS ${{matrix.node-version}}"
+                 echo "Running tests on OS ${{matrix.os}} and NodeJS ${{matrix.node-version}}"
 
         
