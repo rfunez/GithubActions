@@ -24,4 +24,5 @@ runs:
       if: "${{steps.cache.outputs.cache-hit != 'true'}}"
       shell: bash
       run: npm ci
+      working-directory: "${{inputs.working-dir}}"
 
