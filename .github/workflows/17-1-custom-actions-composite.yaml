@@ -10,7 +10,7 @@ on:
               - prod
 run-name: "17 - 1 - Custom Actions - Composite | env - ${{inputs.target-env}}"
 env: 
-  working-dir: "./04-using-actions/react-app"
+  working-dir: "04-using-actions/react-app"
   
 
 jobs:
