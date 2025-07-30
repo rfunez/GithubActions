@@ -15,6 +15,9 @@ runs:
       uses: actions/setup-node@v4
       with:
         node-version: "${{inputs.node-version}}"
+    - name: "Check pwd"
+      shell: bash
+      run: pwd
     - name: "Cache dependencies"
       id: cache
       uses: actions/cache@v3
