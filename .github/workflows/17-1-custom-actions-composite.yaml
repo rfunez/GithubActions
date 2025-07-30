@@ -10,7 +10,7 @@ on:
               - prod
 run-name: "17 - 1 - Custom Actions - Composite | env - ${{inputs.target-env}}"
 env: 
-  working-directory: "$GITHUB_WORKSPACE/04-using-actions/react-app"
+  working-directory: "./04-using-actions/react-app"
   
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
       - name: "Setup Node and NPM Dependencies"
         uses: "../../.github/actions/composite-cache-deps"
         with:
-            working-directory: "$GITHUB_WORKSPACE"
+            working-directory: "."
       - name: "Test"
         run: npm run test
       - name: "Build"
