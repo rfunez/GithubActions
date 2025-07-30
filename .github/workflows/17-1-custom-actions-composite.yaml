@@ -23,7 +23,7 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v4
       - name: "Setup Node and NPM Dependencies"
-        uses: "../../.github/actions/composite-cache-deps"
+        uses: "./.github/actions/composite-cache-deps"
         with:
             working-directory: "$GITHUB_WORKSPACE"
       - name: "Test"
