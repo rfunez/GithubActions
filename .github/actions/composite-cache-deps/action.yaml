@@ -8,6 +8,10 @@ inputs:
   working-dir:
     description: "The working directory of the application"
     default: $GITHUB_WORKSPACE
+  target-env:
+    description: "Target env input"
+    default: dev
+    required: false
 runs:
   using: composite
   steps:
@@ -22,11 +26,11 @@ runs:
       id: cache
       uses: actions/cache@v4
       with:
-        key: "key-${{ hashFiles(format('{0}/{1}', inputs.working-dir, 'package-lock.json')) }}"
+        key: "${{inputs.target-env}}-${{ hashFiles(format('{0}/{1}', inputs.working-dir, 'package-lock.json')) }}"
         path: "${{inputs.working-dir}}/node-modules"
     - name: "Install dependencies"
       if: "${{steps.cache.outputs.cache-hit != 'true'}}"
       shell: bash
-      run: npm ci
+      run: ${{inputs.target-env != 'dev' && npm ci || npm ci --ommit=dev}}
       working-directory: "${{inputs.working-dir}}"
 
