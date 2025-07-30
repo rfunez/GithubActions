@@ -21,7 +21,7 @@ runs:
         node-version: "${{inputs.node-version}}"
     - name: "Check pwd"
       shell: bash
-      run: pwd
+      run: ls -latr
     - name: "Cache dependencies"
       id: cache
       uses: actions/cache@v4
