@@ -7,7 +7,7 @@ inputs:
     required: false
   working-dir:
     description: "The working directory of the application"
-    default: $GITHUB_WORKSPACE
+    default: "."
   target-env:
     description: "Target env input"
     default: dev
