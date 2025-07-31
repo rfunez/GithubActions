@@ -29,9 +29,6 @@ runs:
       with:
         key: "${{inputs.target-env}}-${{inputs.working-dir}}/package-lock.json"
         path: "${{inputs.working-dir}}/node_modules"
-    - name: "Preinstall dependencies"
-      shell: bash
-      run: npm install
     - name: "Install dependencies"
       if: "${{steps.cache.outputs.cache-hit != 'true'}}"
       shell: bash
