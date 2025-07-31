@@ -7,7 +7,8 @@ inputs:
     required: false
   working-dir:
     description: "The working directory of the application"
-    default: "."
+    default: .
+    required: false
   target-env:
     description: "Target env input"
     default: dev
@@ -24,10 +25,10 @@ runs:
       run: ls -latr
     - name: "Cache dependencies"
       id: cache
-      uses: actions/cache@v4
+      uses: actions/cache@v3
       with:
-        key: "${{inputs.target-env}}-${{ hashFiles(format('{0}/{1}', inputs.working-dir, 'package-lock.json')) }}"
-        path: "${{inputs.working-dir}}/node-modules"
+        key: "${{inputs.target-env}}-${{inputs.working-dir/package-lock.json}}"
+        path: "${{inputs.working-dir}}/node_modules"
     - name: "Preinstall dependencies"
       shell: bash
       run: npm install
