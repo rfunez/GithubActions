@@ -17,7 +17,7 @@ runs:
   using: composite
   steps:
     - name: "Setup NodeJS version ${{inputs.node-version}}"
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v3
       with:
         node-version: "${{inputs.node-version}}"
     - name: "Check pwd"
@@ -27,7 +27,7 @@ runs:
       id: cache
       uses: actions/cache@v3
       with:
-        key: "${{inputs.target-env}}-${{inputs.working-dir/package-lock.json}}"
+        key: "${{inputs.target-env}}-${{inputs.working-dir}}/package-lock.json"
         path: "${{inputs.working-dir}}/node_modules"
     - name: "Preinstall dependencies"
       shell: bash
