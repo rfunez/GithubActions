@@ -4,10 +4,12 @@ on:
         inputs:
           base-branch:
             description: "Base branch imput"
+            default: "main"
             type: string
           target-branch:
             description: "Target branch input"
             type: string
+            default: "update-dependencies"
             required: true
           working-dir:
             description: "Working dir input"
