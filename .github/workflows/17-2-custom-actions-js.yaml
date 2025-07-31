@@ -32,7 +32,7 @@ jobs:
             with:
                 base-branch: "${{inputs.base-branch}}"
                 target-branch: "${{inputs.target-branch}}"
-                working-dir: ""
+                working-dir: "${{inputs.working-dir}}"
                 debug: "${{inputs.debug}}"
                 gh-token: "${{secrets.GITHUB_TOKEN}}"
 
