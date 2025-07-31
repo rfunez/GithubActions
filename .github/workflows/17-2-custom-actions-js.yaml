@@ -13,7 +13,7 @@ on:
             required: true
           working-dir:
             description: "Working dir input"
-            default: "/04-using-actions/react-app"
+            default: "04-using-actions/react-app"
             required: true
           debug:
             description: "Debug input"
