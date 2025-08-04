@@ -13,10 +13,11 @@ jobs:
         steps:
           - name: "Print outputs"
             run: |
-                  echo "Build status: ${{job.deploy.outputs.build-status}}"
-                  echo "URL: ${{job.deploy.outputs.url}}"
+                  echo "Build status: ${{jobs.deploy.outputs.build-status}}"
+                  echo "URL: ${{jobs.deploy.outputs.url}}"
         
 
 
         
+
 
