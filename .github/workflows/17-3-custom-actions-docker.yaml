@@ -15,4 +15,5 @@ jobs:
         uses: actions/checkout@v4
       - name: "Ping url code"
         uses: ./.github/actions/docker-ping-url
-        with: "${{inputs.url}}"
+        with: 
+            url: "${{inputs.url}}"
