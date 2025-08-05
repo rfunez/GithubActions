@@ -6,8 +6,11 @@ jobs:
     unsafe-pr:
         runs-on: ubuntu-latest
         steps:
+            - name: "Checkout"
+              uses: actions/action@v4
             - name: "Check PR title"
               run: |
+                    pwd
                     title=${{ github.event.pull_request.title }}
                     if [[ $title =~ ^feat ]]; then
                     echo "PR is a feature"
@@ -25,6 +28,7 @@ jobs:
             env:
               TITLE: "${{github.event.pull_request.title}}"
             run: |
+                 pwd
                  title=${{ env.TITLE }}
                  if [[ $title =~ ^feat ]]; then
                  echo "PR is a feature"
