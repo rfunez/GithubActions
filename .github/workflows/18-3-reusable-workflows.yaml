@@ -8,7 +8,7 @@ jobs:
       with:
         target_directory: test
     e2e-tests:
-      uses: rfunez/github-actions-course-example-e2e/.github/workflows/e2e.yaml@main
+      uses: rfunez/github-actions-course-example-e2e//.github/workflows/e2e.yaml@main
       secrets:
         access-token: ${{secrets.GITHUB_TOKEN}}
       
