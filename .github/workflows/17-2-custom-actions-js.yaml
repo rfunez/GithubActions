@@ -1,0 +1,38 @@
+name: "17 - 2 - Custom Actions - JS"
+on:
+    workflow_dispatch:
+        inputs:
+          base-branch:
+            description: "Base branch imput"
+            default: "main"
+            type: string
+          target-branch:
+            description: "Target branch input"
+            type: string
+            default: "update-dependencies"
+            required: true
+          working-dir:
+            description: "Working dir input"
+            default: test
+            required: true
+          debug:
+            description: "Debug input"
+            type: boolean
+        
+run-name: "17-2-Custom Actions-JS-${{inputs.base-branch}}-${{inputs.target-branch}}-${{inputs.working-dir}}"
+
+jobs:
+    dependency-update:
+        runs-on: ubuntu-latest
+        steps:
+          - name: "Ckeckout"
+            uses: actions/checkout@v4
+          - name: "Check for dependency updates"
+            uses: "./.github/actions/js-dependency-update"
+            with:
+                base-branch: "${{inputs.base-branch}}"
+                target-branch: "${{inputs.target-branch}}"
+                working-dir: "${{inputs.working-dir}}"
+                debug: "${{inputs.debug}}"
+                gh-token: "${{secrets.GITHUB_TOKEN}}"
+

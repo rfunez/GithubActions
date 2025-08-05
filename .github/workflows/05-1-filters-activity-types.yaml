@@ -1,0 +1,10 @@
+name: "05 - 1 - Event Filters and Activity Types"
+on:
+    workflow_dispatch:
+      
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Echo PR event condition ans activity type"
+        run: echo "This is a PR message on main"
