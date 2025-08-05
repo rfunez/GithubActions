@@ -7,8 +7,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "Checkout"
-              uses: actions/action@v4
-            - name: "Check PR title"
+              uses: actions/checkout@v4
+            - name: "Check PR title step"
               run: |
                     pwd
                     title=${{ github.event.pull_request.title }}
@@ -24,7 +24,7 @@ jobs:
         steps:
           - name: "Checkout"
             uses: actions/checkout@v4
-          - name: "Check PR title"
+          - name: "Check PR title step"
             env:
               TITLE: "${{github.event.pull_request.title}}"
             run: |
