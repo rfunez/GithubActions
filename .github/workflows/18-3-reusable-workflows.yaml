@@ -6,6 +6,6 @@ jobs:
     deploy:
         uses: ./.github/workflows/18-1-reusable-workflows.yaml
         with:
-            target-directory: test
+            target_directory: test
     e2e-tests:
         uses: rfunez/github-actions-course-example-e2e/.github/workflows/e2e.yaml@main
